@@ -1,7 +1,5 @@
 # F1 Race-Winner Predictor: 2026 Singapore Grand Prix
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/f1-singapore-gp-2026-predictor/blob/main/singapore_gp_predictor.ipynb)
-
 A machine-learning model that predicts the winner and finishing order of the 2026 Singapore Grand Prix from qualifying, recent form, circuit history and championship standing.
 
 ## Result

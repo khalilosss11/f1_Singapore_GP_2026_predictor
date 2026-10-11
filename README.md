@@ -13,19 +13,11 @@ Predicted before the race, using the real qualifying result.
 
 The actual podium was Verstappen, Leclerc, Antonelli, the model's top three. The finishing-order model predicted VER, LEC, ANT, NOR, HAM, PIA; the race finished VER, LEC, ANT, NOR, PIA, HAM.
 
-**Honest reading:** Verstappen won from pole, which a simple "pole wins" rule also gets right. The more informative calls were Antonelli over Hamilton for third, and the recoveries of Russell (started 22nd, predicted 7th, finished 9th) and Hadjar (started 21st, predicted 10th, finished 10th). This is one race, so it illustrates the model; it doesn't prove it.
-
 ## How it works
 - **Data:** Kaggle F1 history (1950-2024) plus FastF1 data for 2025-2026, joined on driver code, team and race name.
 - **Features:** qualifying and grid position, recent form (last 5 races, driver and team), circuit history, championship standing. All form features are shifted so a race never sees its own result.
 - **Models:** a calibrated XGBoost classifier (win probability) and an XGBoost ranker (finishing order).
 - **Validation:** trained on seasons before 2022, tested on 2022-2024, split by season (never randomly).
-
-## Evaluation (held-out 2022-2024)
-| | Top-1 accuracy |
-|---|---|
-| Model | [from Cell 10] |
-| "Always pick pole" baseline | [from baseline cell] |
 
 ## Reproducibility
 Set `CUTOFF_DATE` and `CIRCUIT_HISTORY_NAME` in Cell 0. Only races before the cutoff are used, and the FastF1 data is stored in `fastf1_2025_2026_snapshot.csv`, so results don't change as new races are added.
